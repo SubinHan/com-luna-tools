@@ -20,5 +20,6 @@ public:
 	wstring readNext();
 	bool hasNext();
 	~CsvReader();
-
 };
+
+CsvReader& operator >>(CsvReader& inputStream, const wstring& s);

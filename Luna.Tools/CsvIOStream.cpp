@@ -58,3 +58,9 @@ CsvReader::~CsvReader()
 {
 	delete file;
 }
+
+CsvReader& operator>>(CsvReader& inputStream, wstring& s)
+{
+	s = inputStream.readNext();
+	return inputStream;
+}

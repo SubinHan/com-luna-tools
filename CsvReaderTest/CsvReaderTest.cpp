@@ -34,9 +34,6 @@ namespace CsvReaderTest
 			{
 				Assert::AreEqual(peekAndPop(expected), peekAndPop(q));
 			}
-
-
-		
 		}
 
 		TEST_METHOD(LongTest)
@@ -91,6 +88,59 @@ namespace CsvReaderTest
 			}
 			
 			Assert::AreEqual(false, reader.hasNext());
+		}
+
+		TEST_METHOD(OperatorTest)
+		{
+			CsvReader reader("D:/c++/Luna.Tools/CsvReaderTest/Resources/Short.csv");
+			queue<wstring> expected;
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤¡¤¿)"s);
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤¡¤Ì)"s);
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤¡¤Ó)"s);
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤§¤Ó)"s);
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤µ¤Ó)"s);
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤¸¤Ó)"s);
+
+			queue<wstring> q;
+			wstring s;
+
+			while (reader.hasNext())
+			{
+				reader >> s;
+				q.push(s);
+			}
+
+			while (!expected.empty())
+			{
+				Assert::AreEqual(peekAndPop(expected), peekAndPop(q));
+			}
+		}
+
+		TEST_METHOD(OperatorTest2)
+		{
+			CsvReader reader("D:/c++/Luna.Tools/CsvReaderTest/Resources/Short.csv");
+			queue<wstring> expected;
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤¡¤¿)"s);
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤¡¤Ì)"s);
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤¡¤Ó)"s);
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤§¤Ó)"s);
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤µ¤Ó)"s);
+			expected.push(LR"(¤¡¤¡¤¿¤¡¤¸¤Ó)"s);
+
+			queue<wstring> q;
+			wstring s1, s2;
+
+			while (reader.hasNext())
+			{
+				reader >> s1 >> s2;
+				q.push(s1);
+				q.push(s2);
+			}
+
+			while (!expected.empty())
+			{
+				Assert::AreEqual(peekAndPop(expected), peekAndPop(q));
+			}
 		}
 	};
 }
