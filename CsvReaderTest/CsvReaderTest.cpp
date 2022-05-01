@@ -27,7 +27,7 @@ namespace CsvReaderTest
 
 			for (int i = 0; i < expected.size(); i++)
 			{
-				q.push(reader.readNext2());
+				q.push(reader.readNext());
 			}
 
 			while (!expected.empty())
@@ -60,7 +60,7 @@ namespace CsvReaderTest
 
 			for (int i = 0; i < expected.size(); i++)
 			{
-				q.push(reader.readNext2());
+				q.push(reader.readNext());
 			}
 
 			while (!expected.empty())
@@ -80,7 +80,7 @@ namespace CsvReaderTest
 
 			for (int i = 0; i < expected.size(); i++)
 			{
-				q.push(reader.readNext2());
+				q.push(reader.readNext());
 			}
 
 			while (!expected.empty())
