@@ -1,7 +1,5 @@
 #include "CsvIOStream.h"
 
-
-
 CsvReader::CsvReader(string path)
 {
 	std::locale::global(std::locale("Korean"));
