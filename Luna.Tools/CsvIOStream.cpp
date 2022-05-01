@@ -5,6 +5,7 @@ CsvReader::CsvReader(string path)
 	std::locale::global(std::locale("Korean"));
 	file = new wifstream();
 	file->open(path);
+	bHasNext = true;
 
 	if (!file)
 	{
@@ -37,6 +38,7 @@ wstring CsvReader::readNext()
 			break;
 		}
 		case 65535:
+			bHasNext = false;
 			break;
 		default:
 			builder << c;
@@ -45,6 +47,11 @@ wstring CsvReader::readNext()
 	}
 
 	return builder.str();
+}
+
+bool CsvReader::hasNext()
+{
+	return bHasNext;
 }
 
 CsvReader::~CsvReader()

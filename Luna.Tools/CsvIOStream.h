@@ -4,9 +4,6 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <vector>
-#include <queue>
-#include <iterator>
 
 using namespace std;
 
@@ -14,12 +11,14 @@ class CsvReader
 {
 private:
 	wifstream* file;
+	bool bHasNext;
 
 private:
 
 public:
 	CsvReader(string path);
 	wstring readNext();
+	bool hasNext();
 	~CsvReader();
 
 };

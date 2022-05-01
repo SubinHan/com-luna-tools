@@ -25,7 +25,7 @@ namespace CsvReaderTest
 
 			queue<wstring> q;
 
-			for (int i = 0; i < expected.size(); i++)
+			while (reader.hasNext())
 			{
 				q.push(reader.readNext());
 			}
@@ -34,6 +34,8 @@ namespace CsvReaderTest
 			{
 				Assert::AreEqual(peekAndPop(expected), peekAndPop(q));
 			}
+
+
 		
 		}
 
@@ -87,6 +89,8 @@ namespace CsvReaderTest
 			{
 				Assert::AreEqual(peekAndPop(expected), peekAndPop(q));
 			}
+			
+			Assert::AreEqual(false, reader.hasNext());
 		}
 	};
 }
