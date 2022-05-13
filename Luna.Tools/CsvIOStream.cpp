@@ -46,6 +46,9 @@ wstring CsvReader::readNext()
 		}
 	}
 
+	if (file->eof())
+		bHasNext = false;
+
 	return builder.str();
 }
 
@@ -56,6 +59,7 @@ bool CsvReader::hasNext()
 
 CsvReader::~CsvReader()
 {
+	file->close();
 	delete file;
 }
 
