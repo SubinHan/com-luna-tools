@@ -5,6 +5,11 @@ CommandParser::CommandParser(string toParse)
 
 }
 
+string CommandParser::getCommand()
+{
+	return string();
+}
+
 bool CommandParser::getFlag(string name)
 {
 	return false;

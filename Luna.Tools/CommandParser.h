@@ -17,6 +17,7 @@ private:
 public:
 	CommandParser() = delete;
 	CommandParser(string toParse);
+	string getCommand();
 	bool getFlag(string name);
 	string* getArgs(string name);
 	~CommandParser();
