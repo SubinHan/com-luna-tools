@@ -1,6 +1,9 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <map>
+#include <set>
 
 using namespace std;
 
@@ -13,12 +16,15 @@ class CommandParser
 {
 private:
 	string toParse;
+	string command;
+	set<string> flagsMap;
+	map<string, vector<string>> optionsMap;
 
 public:
 	CommandParser() = delete;
 	CommandParser(string toParse);
 	string getCommand();
 	bool getFlag(string name);
-	string* getArgs(string name);
+	vector<string> getArgs(string name);
 	~CommandParser();
 };

@@ -1,23 +1,32 @@
 #include "CommandParser.h"
 
-CommandParser::CommandParser(string toParse)
+CommandParser::CommandParser(string toParse) : toParse(toParse)
 {
-
 }
 
 string CommandParser::getCommand()
 {
-	return string();
+	return this->command;
 }
 
 bool CommandParser::getFlag(string name)
 {
+	set<string>::iterator iter = this->flagsMap.find(name);
+	if (iter != this->flagsMap.end())
+	{
+		return true;
+	}
 	return false;
 }
 
-string* CommandParser::getArgs(string name)
+vector<string> CommandParser::getArgs(string name)
 {
-	return nullptr;
+	map<string, vector<string>>::iterator iter = this->optionsMap.find(name);
+	if (iter != this->optionsMap.end())
+	{
+		return iter->second;
+	}
+	return vector<string>();
 }
 
 CommandParser::~CommandParser()
