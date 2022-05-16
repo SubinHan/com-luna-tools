@@ -21,6 +21,12 @@
     <ClInclude Include="Utils.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Cloneable.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandParser.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CsvIOStream.cpp">

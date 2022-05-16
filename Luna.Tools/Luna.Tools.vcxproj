@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Cloneable.h" />
+    <ClInclude Include="CommandParser.h" />
     <ClInclude Include="CsvIOStream.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
