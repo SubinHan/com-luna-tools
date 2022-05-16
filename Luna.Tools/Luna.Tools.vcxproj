@@ -145,6 +145,7 @@
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CommandParser.cpp" />
     <ClCompile Include="CsvIOStream.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
