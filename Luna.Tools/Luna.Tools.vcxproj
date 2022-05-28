@@ -142,11 +142,13 @@
     <ClInclude Include="Cloneable.h" />
     <ClInclude Include="CommandParser.h" />
     <ClInclude Include="CsvIOStream.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandParser.cpp" />
     <ClCompile Include="CsvIOStream.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

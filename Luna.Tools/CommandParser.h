@@ -20,6 +20,9 @@ private:
 	set<string> flagsMap;
 	map<string, vector<string>> optionsMap;
 
+	static const char delimeter = ' ';
+	static const char optionSpecifier = '-';
+
 public:
 	CommandParser() = delete;
 	CommandParser(string toParse);

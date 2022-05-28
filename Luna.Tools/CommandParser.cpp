@@ -1,7 +1,20 @@
 #include "CommandParser.h"
+#include <algorithm>
 
 CommandParser::CommandParser(string toParse) : toParse(toParse)
 {
+	for (string::iterator iter = toParse.begin(); iter != toParse.end(); iter++)
+	{
+		switch (*iter)
+		{
+		case delimeter:
+			break;
+		case optionSpecifier:
+			break;
+		default:
+			break;
+		}
+	}
 }
 
 string CommandParser::getCommand()
